@@ -1,0 +1,44 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(event) {
+            $('#form1').ajaxForm(function(data) {
+                $('#result').html(data);
+            });
+        });
+  </script>  
+</head>
+<body>
+<form id="form1" action="handler.php" method="post" enctype="multipart/form-data">
+    <h3>Please input the XML:</h3>
+    <p> Nume:  </p>
+    <input type="text" name="name" required>
+    </p>
+    <p> Telefon: </p>
+    <input type="text" name="phone" required>
+    </p>
+    <p> E-mail: </p>
+    <input type="text" name="e_mail" required>
+    </p>
+	<p> La ce firma : </p>
+	<!--<select name ="f1" >
+	<option value="1">firma 1</option>
+	<option value="2">firma 2</option>
+	<option value="3">firma 3</option>
+	<option value="4">firma 4</option>
+	</select><br>-->
+	<input type="checkbox"  name="f1" value ="1"> firma 1<br>
+	<input type="checkbox" name="f2" value ="1"> firma 2<br>
+	<input type="checkbox"  name="f3" value ="1"> firma 3<br>
+	<input type="checkbox" name="f4" value ="1"> firma 4<br> 
+    <p> CV : </p>
+	<input id="cv" type="file" name="cv" /> <br>
+    <input id="submit" type="submit" value="Upload File"/> <br>
+</form>
+
+<div id="result">call back result will appear here</div>
+
+</body>
+</html>
